@@ -45,7 +45,7 @@ public class FilmController : Controller
     new Movie { Id = 36, Titre = "No Country for Old Men", Genre = "Thriller", Annee = 2007 }
   };
 
-  public IActionResult Index(string? genre = null, string? searchString = null, bool sort = false)
+  public IActionResult Index(string? genre = null, string? searchString = null, bool sort = false, bool sort2 = false, bool sort3 = false)
   {
     IEnumerable<ExoAspNet.Models.Movie> movies = _movies;
     
@@ -62,6 +62,16 @@ public class FilmController : Controller
     if (sort)
     {
       movies = movies.OrderBy(m => m.Titre);
+    }
+
+    if (sort2)
+    {
+      movies = movies.OrderBy(m => m.Annee);
+    }
+
+    if (sort3)
+    {
+      movies = movies.OrderBy(m => m.Genre);
     }
     
     ViewData["CurrentFilter"] = searchString;

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExoAspNet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cabdd7beeec3471ca63dddd8a4e77906f2a99828")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5437a63033a9bac99da77d0b3e0304f5f06388dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExoAspNet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExoAspNet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

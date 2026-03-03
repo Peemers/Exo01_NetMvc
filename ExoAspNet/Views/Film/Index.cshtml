@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ExoAspNet.Models.Movie>
+
+@{
+    ViewData["Title"] = "Liste des films";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="mb-3">
+    <a asp-action="Index" asp-route-sort="true" class="btn btn-outline-secondary">
+        Trier les titres de A à Z
+    </a>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Titre</th>
+        <th>Genre</th>
+        <th>Année de sortie</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (ExoAspNet.Models.Movie movie in Model)
+    {
+        <tr>
+            <td>@movie.Titre</td>
+            <td>@movie.Genre</td>
+            <td>@movie.Annee</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@movie.Id">Détails</a>
+                <a asp-action="Supprimer" asp-route-id="@movie.Id" class="btn btn-danger">Supprimer</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

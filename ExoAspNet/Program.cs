@@ -1,7 +1,13 @@
+using ExoAspNet.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient<TmdbService>(client =>
+{
+  client.BaseAddress = new Uri(builder.Configuration["TMDB:BaseUrl"] ?? "");
+});
 
 var app = builder.Build();
 
